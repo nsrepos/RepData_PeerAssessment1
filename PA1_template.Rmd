@@ -5,7 +5,7 @@ output:
     keep_md: true
 ---
 ```{r echo=FALSE}
-knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6)
+knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6,fig.path="figure/")
 ```
 
 
