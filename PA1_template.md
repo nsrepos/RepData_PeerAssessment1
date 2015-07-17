@@ -1,4 +1,9 @@
-# Reproducible Research: Peer Assessment 1
+---
+title: "Reproducible Research: Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
+---
 
 
 
@@ -31,7 +36,7 @@ g <- ggplot(df, aes(x=steps,fill=..count..))+
 print(g)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3-1.png) 
    
 We can get the mean median and standard deviation as followes:  
 
@@ -61,7 +66,7 @@ xyplot(steps ~ interval, data=df,type="l",grid=TRUE,
        ylab="average steps")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
 
 We use which() to find the 5-minute interval, on average across all the days in the dataset, that contains the maximum number of steps
 
@@ -122,14 +127,14 @@ combActivity <- rbind(sumActivity,sumModActivity)
 Shown below is a table depicting the approach.  
 For every NA value we mathch the corresponding interval and replace the missing step value with the total daily average.
 
- missing steps       date       interval    matched interval    average steps 
----------------  ------------  ----------  ------------------  ---------------
-      NA          2012-10-01       0               0                1.72      
-      NA          2012-10-01       5               5                0.34      
-      NA          2012-10-01       10              10               0.13      
-      NA          2012-10-01       15              15               0.15      
-      NA          2012-10-01       20              20               0.08      
-      NA          2012-10-01       25              25               2.09      
+| missing steps |    date    | interval | matched interval | average steps |
+|:-------------:|:----------:|:--------:|:----------------:|:-------------:|
+|      NA       | 2012-10-01 |    0     |        0         |     1.72      |
+|      NA       | 2012-10-01 |    5     |        5         |     0.34      |
+|      NA       | 2012-10-01 |    10    |        10        |     0.13      |
+|      NA       | 2012-10-01 |    15    |        15        |     0.15      |
+|      NA       | 2012-10-01 |    20    |        20        |     0.08      |
+|      NA       | 2012-10-01 |    25    |        25        |     2.09      |
    
 Let us now plot side by side histograms of steps for NA values ignored and filled 
 
@@ -140,7 +145,7 @@ g <- ggplot(combActivity, aes(x=steps,fill=na))+
 print(g)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
+![plot of chunk unnamed-chunk-10](figure/unnamed-chunk-10-1.png) 
 
 
 The mean total number of steps taken per day **10766**  median= **10766** and sd=**3974.39** 
@@ -165,6 +170,6 @@ df <- df %>%
 xyplot(steps ~ interval | day, data=df,type="l",grid=TRUE,layout=c(1,2),main="Comparing Activity Patterns")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png) 
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
    
 Comparing the two panels we can see that on weekends there are greater number of steps in the higher intervals.  The pattern shown suggets that activity is much higher on weekends than weekdays, which is very reasonable.   
