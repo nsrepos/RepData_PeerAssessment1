@@ -172,4 +172,7 @@ xyplot(steps ~ interval | day, data=df,type="l",grid=TRUE,layout=c(1,2),main="Co
 
 ![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png) 
    
-Comparing the two panels we can see that on weekends there are greater number of steps in the higher intervals.  The pattern shown suggets that activity is much higher on weekends than weekdays, which is very reasonable.   
+Comparing the two panels we can see that on weekends there are greater number of steps in the higher intervals.  The pattern shown suggests that activity is much higher on weekends than weekdays, which is very reasonable.   
+
+
+
